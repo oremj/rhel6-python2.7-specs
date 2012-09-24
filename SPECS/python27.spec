@@ -2,7 +2,7 @@
 %define pybasever 2.7
 %define version 2.7.3
 %define name python
-%define release 1pydotorg
+%define release 1
 
 Name: %{name}%{binsuffix}
 Version: %{version}
@@ -118,3 +118,7 @@ documentation.
 %{_prefix}/include/python2.7/*
 %{_libdir}/python2.7/config/*
 %{_prefix}/lib/python2.7/config
+
+%changelog
+* Mon Sep 24 2012 Jeremiah Orem <oremj@oremj.com> - 2.7.3-1
+- Initial RPM release

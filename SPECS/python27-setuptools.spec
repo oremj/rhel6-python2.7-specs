@@ -72,7 +72,7 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Mon Sep 24 2012 Jeremiah Orem <oremj@mozilla.com> - 0.6.28-1
+* Mon Sep 24 2012 Jeremiah Orem <oremj@oremj.com> - 0.6.28-1
 - build for python2.7
 
 * Wed Jul 14 2010 David Malcolm <dmalcolm@redhat.com> - 0.6.10-3
