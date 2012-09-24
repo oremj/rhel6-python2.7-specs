@@ -12,7 +12,7 @@ Group: Development/Languages
 Source0: Python-%{version}.tar.bz2
 
 License: PSF
-BuildRoot:  %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
+BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
 AutoReq: no
 Provides: python(abi) = %{pybasever}
@@ -80,24 +80,24 @@ documentation.
 
 %build
 %configure --enable-unicode=ucs4 --enable-shared --prefix=%{_prefix}
-make %{?_smp_mflags}
+%{__make} %{?_smp_mflags}
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
-rm -f $RPM_BUILD_ROOT%{_prefix}/bin/python{,2}
-rm -f $RPM_BUILD_ROOT%{_prefix}/bin/python{,2}-config
-rm -f $RPM_BUILD_ROOT%{_prefix}/bin/2to3
-rm -f $RPM_BUILD_ROOT%{_prefix}/bin/idle
-rm -f $RPM_BUILD_ROOT%{_prefix}/bin/pydoc
-rm -f $RPM_BUILD_ROOT%{_prefix}/bin/smtpd.py
-rm -rf $RPM_BUILD_ROOT%{_libdir}/pkgconfig/
-ln -s %{_libdir}/python2.7/config $RPM_BUILD_ROOT%{_prefix}/lib/python2.7/config
-ln -s %{_libdir}/python2.7/lib-dynload $RPM_BUILD_ROOT%{_prefix}/lib/python2.7/lib-dynload
+%{__rm} -rf $RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__rm} -f $RPM_BUILD_ROOT%{_prefix}/bin/python{,2}
+%{__rm} -f $RPM_BUILD_ROOT%{_prefix}/bin/python{,2}-config
+%{__rm} -f $RPM_BUILD_ROOT%{_prefix}/bin/2to3
+%{__rm} -f $RPM_BUILD_ROOT%{_prefix}/bin/idle
+%{__rm} -f $RPM_BUILD_ROOT%{_prefix}/bin/pydoc
+%{__rm} -f $RPM_BUILD_ROOT%{_prefix}/bin/smtpd.py
+%{__rm} -rf $RPM_BUILD_ROOT%{_libdir}/pkgconfig/
+%{__ln_s} %{_libdir}/python2.7/config $RPM_BUILD_ROOT%{_prefix}/lib/python2.7/config
+%{__ln_s} %{_libdir}/python2.7/lib-dynload $RPM_BUILD_ROOT%{_prefix}/lib/python2.7/lib-dynload
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%{__rm} -rf $RPM_BUILD_ROOT
 
 
 %files
@@ -118,8 +118,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/include/python2.7/*
 %{_libdir}/python2.7/config/*
 %{_prefix}/lib/python2.7/config
-
-
-
-%changelog
-
