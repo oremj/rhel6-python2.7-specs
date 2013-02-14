@@ -2,7 +2,7 @@
 %define pybasever 2.7
 %define version 2.7.3
 %define name python
-%define release 1
+%define release 2
 
 Name: %{name}%{binsuffix}
 Version: %{version}
@@ -33,6 +33,7 @@ BuildRequires: gmp-devel
 BuildRequires: libffi-devel
 BuildRequires: libGL-devel
 BuildRequires: libX11-devel
+BuildRequires: make
 BuildRequires: ncurses-devel
 BuildRequires: openssl-devel
 BuildRequires: pkgconfig
